@@ -3,7 +3,7 @@
 Install with python3 in Raspberry Pi 3b+ or 4:
 ```sh
 sudo apt-get update && sudo apt-get upgrade -y
-sudo apt-get install gpac python3 git python3-pip -y
+sudo apt-get install gpac python3 git python3-pip python3-picamera python3-pil python3-numpy python3-scipy -y
 git clone https://github.com/Twodragon0/picam-ipfs.git
 ```
 Install with pip:
@@ -49,3 +49,10 @@ python3 ipfs_http_client.py
 
 Result: IPFS hash
 Qm <hash> 
+
+## Error solution = TabError: inconsistent use of tabs and spaces in indentation
+When code shows Tab or 4 spaces error, autopep8 of pip3 has to install. and it uses Filename.py.
+```sh
+pip3 install --upgrade autopep8
+autopep8 -i stest2.py 
+```
