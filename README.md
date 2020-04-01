@@ -3,7 +3,7 @@
 Install with python3 in Raspberry Pi 3b+ or 4:
 ```sh
 sudo apt-get update && sudo apt-get upgrade -y
-sudo apt-get install gpac python3 git python3-pip -y
+sudo apt-get install gpac python3 git python3-pip python3-picamera python3-pil python3-numpy python3-scipy -y
 git clone https://github.com/Twodragon0/picam-ipfs.git
 ```
 Install with pip:
