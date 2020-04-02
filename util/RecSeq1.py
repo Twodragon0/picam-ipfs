@@ -12,9 +12,9 @@ import numpy as np
 from PIL import Image  # for converting array back to a JPEG for export (debug only)
 
 # --------------------------------------------------
-videoDir = "/mnt/video1/" # directory to record video files 
-picDir = "/mnt/video1/" # directory to record still images
-logfile = "/home/pi/logs/RecSeq_log.csv" # where to save log of motion detections
+videoDir = "data/" # directory to record video files 
+picDir = "data/" # directory to record still images
+logfile = "data/RecSeq_log.csv" # where to save log of motion detections
 recFPS = 8  # how many frames per second to record
 cxsize = 1920 # camera video X size
 cysize = 1080 # camera video Y size
@@ -139,7 +139,7 @@ def detect_motion(camera):
       running = True                    # ok, now we're running
       return False
 
-						   # avgmap = [stsum] / stg
+                           # avgmap = [stsum] / stg
     difmap = newmap - np.divide(stsum, stg)        # difference pixmap (amount of per-pixel change)
     difmap = abs(difmap)                 # take absolute value (brightness may increase or decrease)
     magMax = np.amax(difmap)               # peak magnitude of change
@@ -160,7 +160,7 @@ def detect_motion(camera):
 
     if initPass > 0:             # are we still initializing array averages?
       initPass = initPass - 1
-      return False		# if so, quit now before making any event-detections
+      return False      # if so, quit now before making any event-detections
 
     condition = novel > 0  # boolean array of pixels showing positive 'novelty' value
     changedPixels = np.extract(condition, novel)
@@ -182,7 +182,7 @@ def detect_motion(camera):
       if (tInterval > logHoldoff):  # only log when at least logHoldoff time has elapsed
         tStart = tNow
         daytime = datetime.now().strftime("%y%m%d_%H%M%S")
-	# saveFrame(camera)  # save a still image - unfortunately makes the video recording skip frames
+    # saveFrame(camera)  # save a still image - unfortunately makes the video recording skip frames
         tstr = ("%s,  dM:%4.1f, nM:%4.1f, dT:%6.3f, px:%d\n" % (daytime,magMax,novMax,tInterval,countPixels))
         f.write(tstr)
         f.flush()
@@ -197,10 +197,10 @@ def detect_motion(camera):
         print ("cPx:%d nM:%5.1f d:%5.2f s:%5.2f fps=%3.0f" %\
                (countPixels, novMax, dAvg, sAvg, fps))
         
-	# np.set_printoptions(precision=1)
-	# print(difmap)
-	# print(sqsum) # show all elements of array 
-	# print(stdev) # show all elements of array 
+    # np.set_printoptions(precision=1)
+    # print(difmap)
+    # print(sqsum) # show all elements of array 
+    # print(stdev) # show all elements of array 
 
 #        fstr = '%04d' % (frames)  # convert integer to formatted string with leading zeros
 #        img = Image.fromarray(stsum.astype(int))

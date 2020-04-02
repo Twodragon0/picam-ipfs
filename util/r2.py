@@ -17,9 +17,9 @@ from PIL import Image  # for converting array back to a JPEG for export (debug o
 # --------------------------------------------------
 VERSION = "PiMotion v0.22 30-Sept-2014 J.Beale"
 
-videoDir = "/mnt/video1/" # directory to record video files 
-picDir = "/mnt/video1/events/" # directory to record still images
-logfile = "/mnt/video1/logs/RecSeq_log.csv" # where to save log of motion detections
+videoDir = "data/" # directory to record video files 
+picDir = "data/" # directory to record still images
+logfile = "data/RecSeq_log.csv" # where to save log of motion detections
 recFPS = 8  # how many frames per second to record
 cxsize = 1920 # camera video X size
 cysize = 1080 # camera video Y size
@@ -110,7 +110,7 @@ def updateTS1(camera, delay = 0):
     detect_motion(camera) # one pass through the motion-detect algorithm
     tString = datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
     tString = tString[:-3]  # remove XXX microseconds, leaving milliseconds
-	# put motionIndex on both sides of Time/Date so it doesn't move when centered
+    # put motionIndex on both sides of Time/Date so it doesn't move when centered
     if gotMotion:
       camera.annotate_text = motionIndex + ' ' + tString + ' ' + motionIndex
     else:
@@ -123,9 +123,9 @@ def updateTS1(camera, delay = 0):
       if (tInterval > logHoldoff):  # only log when at least logHoldoff time has elapsed
         mtStart = mtNow
         daytime = datetime.now().strftime("%y%m%d_%H%M%S.%f")
-	daytime = daytime[:-5] # remove xxxxx microseconds, just leave 10ths of seconds
+    daytime = daytime[:-5] # remove xxxxx microseconds, just leave 10ths of seconds
         if saveStills:
-	  saveFrame(camera)  # save out a still image of the motion event
+      saveFrame(camera)  # save out a still image of the motion event
         tstr = ("%s,  dM:%4.1f, nM:%4.1f, dT:%6.3f, px:%d\n" % (daytime,magMax,novMax,tInterval,countPixels))
         f.write(tstr)
         # f.flush()  # this command may cause video frames to be dropped (?)
@@ -176,7 +176,7 @@ def detect_motion(camera):
       running = True                    # ok, now we're running
       return False
 
-						   # avgmap = [stsum] / stg
+                           # avgmap = [stsum] / stg
     difmap = newmap - np.divide(stsum, stg)        # difference pixmap (amount of per-pixel change)
     difmap = abs(difmap)                 # take absolute value (brightness may increase or decrease)
     magMax = np.amax(difmap)               # peak magnitude of change
@@ -197,7 +197,7 @@ def detect_motion(camera):
 
     if initPass > 0:             # are we still initializing array averages?
       initPass = initPass - 1
-      return False		# if so, quit now before making any event-detections
+      return False      # if so, quit now before making any event-detections
 
     condition = novel > 0  # boolean array of pixels showing positive 'novelty' value
     changedPixels = np.extract(condition, novel)
@@ -219,10 +219,10 @@ def detect_motion(camera):
         print ("cPx:%d nM:%5.1f d:%5.2f s:%5.2f fps=%3.0f" %\
                (countPixels, novMax, dAvg, sAvg, fps))
         
-	# np.set_printoptions(precision=1)
-	# print(difmap)
-	# print(sqsum) # show all elements of array 
-	# print(stdev) # show all elements of array 
+    # np.set_printoptions(precision=1)
+    # print(difmap)
+    # print(sqsum) # show all elements of array 
+    # print(stdev) # show all elements of array 
 
 #        fstr = '%04d' % (frames)  # convert integer to formatted string with leading zeros
 #        img = Image.fromarray(stsum.astype(int))
