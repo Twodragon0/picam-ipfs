@@ -18,6 +18,7 @@ pip3 install ipfshttpclient
 
 ```sh
 cd picam-ipfs
+chmod +x ipfs_http_client.py PiMotion.py 
 python3 PiMotion.py
 ```
 
@@ -25,6 +26,7 @@ python3 PiMotion.py
 
 ```sh
 cd data/
+chmod +x proc.sh batchjpeg.py 
 sh proc.sh
 ```
 
