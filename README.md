@@ -6,6 +6,15 @@ sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install gpac python python3 git python-pip python3-pip python-picamera python3-picamera python-pil python3-pil python-numpy python3-numpy python-scipy python3-scipy -y
 git clone https://github.com/Twodragon0/picam-ipfs.git
 ```
+## USB Storage Setup for Data
+
+```sh
+sudo mount /dev/sda1 /media/pi/3312-22-34C
+sudo nano /etc/fstab
+/dev/sda1 /media/pi/3312-22-34C vfat gid=1000,uid=1000 0 2
+```
+And please reboot
+
 Install with pip:
 
 ```sh
@@ -26,7 +35,6 @@ python3 PiMotion.py
 
 ```sh
 cd data/
-chmod +x proc.sh batchjpeg.py 
 sh proc.sh
 ```
 
