@@ -11,12 +11,11 @@ git clone https://github.com/Twodragon0/picam-ipfs.git
 ```sh
 sudo mount /dev/sda1 /media/pi/3312-22-34C
 sudo nano /etc/fstab
-/dev/sda1 /media/pi/3312-22-34C vfat gid=1000,uid=1000 0 2
 ```
-And please reboot
+Insert Info and please reboot:
+/dev/sda1 /media/pi/3312-22-34C vfat gid=1000,uid=1000 0 2
 
 Install with pip:
-
 ```sh
 pip3 install ipfshttpclient
 ```
@@ -35,7 +34,7 @@ python3 PiMotion.py
 
 ```sh
 cd data/
-sh proc.sh
+./proc.sh
 ```
 
 MP4Box is easily installed by 'sudo apt-get install gpac' on any Debian-based system. Note I had to compile avconv from the current github source, because the standard apt-get version does not do frame-accurate seeking, which is needed for this application. 
