@@ -33,4 +33,7 @@ while [ 1 ]; do
   fi
  done
  sleep 15
+ echo "IPFS starting"
+ cd ..
+ python3 ipfs_http_client.py
 done
