@@ -11,6 +11,9 @@ FPS=8
 # minimum amount that mp4 file size of this length should be greater than raw .h264
 mp4add=1900
 
+cd ../ && python3 PiMotion.py &
+sleep 15
+
 while [ 1 ]; do
  for fname in $( ls *.h264 ); do
   mtime="$(stat -c %Y $fname)"
