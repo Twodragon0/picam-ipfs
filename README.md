@@ -30,8 +30,9 @@ chmod +x ipfs_http_client.py PiMotion.py
 python3 PiMotion.py
 ```
 
-"proc.sh" and "batchjpeg.py" run together on the remote host, in the directory where the files are. They convert the raw .h264 files to .mp4 with MP4Box, and then use the 'avconv' program to extract the still frames with motion (marked out in the *.txt logfiles) and save them as jpegs. and Running IPFS_http_client
+"proc.sh" and "batchjpeg.py" run together on the remote host, in the directory where the files are. They convert the raw .h264 files to .mp4 with MP4Box, and then use the 'avconv' program to extract the still frames with motion (marked out in the *.txt logfiles) and save them as jpegs.
 
+Running of Integrate shell code (PiMotion.py, batchjpeg.py, and ipfs_http_client.py):
 ```sh
 cd data/
 ./proc.sh
