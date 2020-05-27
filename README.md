@@ -89,3 +89,20 @@ docker start <container_id>
 docker exec -it <container_id> /bin/ash
 # ipfs swarm peers
 ```
+## Install Golang 1.14:
+```sh
+wget https://dl.google.com/go/go1.14.3.linux-armv6l.tar.gz
+sudo tar -C /usr/local -xzf go1.14.3.linux-armv6l.tar.gz
+sudo rm go1.14.3.linux-armv6l.tar.gz
+sudo nano ~/.profile
+export PATH=$PATH:/usr/local/go/bin # put into ~/.profile
+```
+If already installed old golang with apt-get, please remove this:
+```
+sudo apt remove golang -y && sudo apt-get autoremove -y
+sudo source ~/.profile
+```
+Test:
+```sh
+go version
+```
