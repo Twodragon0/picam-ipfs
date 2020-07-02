@@ -15,7 +15,7 @@ sudo nano /etc/fstab
 Insert Info and please reboot:
 /dev/sda1 /media/pi/3312-22-34C vfat gid=1000,uid=1000 0 2
 
-Install with pip:
+Install with pip for py-ipfs(ipfs v.0.5.X, v.0.4.X):
 ```sh
 pip install ipfshttpclient
 pip3 install ipfshttpclient
