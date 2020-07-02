@@ -17,6 +17,7 @@ Insert Info and please reboot:
 
 Install with pip:
 ```sh
+pip install ipfshttpclient
 pip3 install ipfshttpclient
 ```
 
