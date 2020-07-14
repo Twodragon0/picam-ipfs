@@ -21,6 +21,13 @@ pip install ipfshttpclient
 pip3 install ipfshttpclient
 ```
 
+## SD card capacity expansion after installing Raspberry Pi
+
+```sh
+sudo raspi-config
+```
+Advanced Options -> A1 Expand Filesystem, And then Reboot 
+
 # Picam with python3 
 
 "PiMotion.py" runs on the Pi, recording 30-second segments of 1080p 8 fps video as .h264 from the camera to ramdisk. For each .h264 file, it also writes a .txt file recording the amount of motion detected every 2 frames (1/4 sec).
