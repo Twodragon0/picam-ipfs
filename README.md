@@ -74,6 +74,10 @@ When code shows Tab or 4 spaces error, autopep8 of pip3 has to install. and it u
 pip3 install --upgrade autopep8
 autopep8 -i stest2.py 
 ```
+W: Problem unlinking the file /var/lib/apt/lists/partial/a* - PrepareFiles (30: Read-only file system)
+```sh
+mount -o remount,rw /
+```
 
 ## Install Golang 1.14:
 ```sh
