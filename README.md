@@ -76,7 +76,7 @@ autopep8 -i stest2.py
 ```
 W: Problem unlinking the file /var/lib/apt/lists/partial/a* - PrepareFiles (30: Read-only file system)
 ```sh
-mount -o remount,rw /
+sudo mount -o remount,rw /
 ```
 
 ## Install Golang 1.14:
