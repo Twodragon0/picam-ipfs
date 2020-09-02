@@ -7,13 +7,13 @@ sudo apt-get install gpac python python3 git python-pip python3-pip python-picam
 git clone https://github.com/Twodragon0/picam-ipfs.git
 ```
 ## USB Storage Setup for Data
+Insert UUID Info and please reboot:
 
 ```sh
-sudo mount /dev/sda1 /media/pi/3312-22-34C
+sudo mount /dev/sda1 /media/pi/3312-22*
 sudo nano /etc/fstab
+UUID=dde9*       /kist   ext4    defaults,auto,_netdev   0       0
 ```
-Insert Info and please reboot:
-/dev/sda1 /media/pi/3312-22-34C vfat gid=1000,uid=1000 0 2
 
 Install with pip for py-ipfs(ipfs v.0.5.X, v.0.4.X):
 ```sh
@@ -89,7 +89,7 @@ export PATH=$PATH:/usr/local/go/bin # put into ~/.profile
 ```
 If already installed old golang with apt-get, please remove this:
 ```
-sudo apt remove golang -y && sudo apt-get autoremove -y
+sudo apt remove golang && sudo apt-get autoremove -y
 sudo source ~/.profile
 ```
 Test:
