@@ -12,7 +12,7 @@ Insert UUID Info and please reboot:
 ```sh
 sudo mount /dev/sda1 /media/pi/3312-22*
 sudo nano /etc/fstab
-UUID=dde9*       /kist   ext4    defaults,auto,_netdev   0       0
+UUID=dde9*       /kist   vfat    defaults,auto,_netdev   0       0
 ```
 
 Install with pip for py-ipfs(ipfs v.0.5.X, v.0.4.X):
