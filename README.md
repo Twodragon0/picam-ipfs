@@ -21,6 +21,15 @@ pip install ipfshttpclient
 pip3 install ipfshttpclient
 ```
 
+Migration pip (ipfs v.0.4.X -> v.0.6.0):
+```sh
+git clone https://github.com/ipfs/py-ipfs-http-client.git
+cd py-ipfs-http-client
+pip3 install flit
+flit install --pth-file
+```
+
+
 ## SD card capacity expansion after installing Raspberry Pi
 
 ```sh
