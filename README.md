@@ -21,7 +21,7 @@ pip install ipfshttpclient
 pip3 install ipfshttpclient
 ```
 
-Migration pip (ipfs v.0.4.X -> v.0.6.0):
+Migrating from ipfs-http-client 0.4.x to 0.6.0:
 ```sh
 git clone https://github.com/ipfs/py-ipfs-http-client.git
 cd py-ipfs-http-client
