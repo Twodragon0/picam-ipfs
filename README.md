@@ -43,7 +43,7 @@ Advanced Options -> A1 Expand Filesystem, And then Reboot
 
 ```sh
 cd picam-ipfs
-chmod +x ipfs_http_client.py PiMotion.py 
+sudo chmod +x ipfs_http_client.py PiMotion.py 
 python3 PiMotion.py
 ```
 
