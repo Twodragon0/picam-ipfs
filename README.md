@@ -17,8 +17,8 @@ UUID=dde9*       /kist   vfat    defaults,auto,_netdev   0       0
 
 Install with pip for py-ipfs(ipfs v.0.5.X, v.0.4.X):
 ```sh
-pip install ipfshttpclient
-pip3 install ipfshttpclient
+sudo pip install ipfshttpclient
+sudo pip3 install ipfshttpclient
 ```
 
 Migrating from ipfs-http-client 0.4.x to 0.6.0:
@@ -43,7 +43,7 @@ Advanced Options -> A1 Expand Filesystem, And then Reboot
 
 ```sh
 cd picam-ipfs
-sudo chmod +x ipfs_http_client.py PiMotion.py 
+sudo chmod 777 ipfs_http_client.py PiMotion.py 
 python3 PiMotion.py
 ```
 
@@ -52,7 +52,7 @@ python3 PiMotion.py
 Running of Integrate shell code (PiMotion.py, batchjpeg.py, and ipfs_http_client.py):
 ```sh
 cd data/
-./proc.sh
+sudo ./proc.sh
 ```
 
 MP4Box is easily installed by 'sudo apt-get install gpac' on any Debian-based system. Note I had to compile avconv from the current github source, because the standard apt-get version does not do frame-accurate seeking, which is needed for this application. 
