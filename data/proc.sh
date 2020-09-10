@@ -11,7 +11,7 @@ FPS=8
 # minimum amount that mp4 file size of this length should be greater than raw .h264
 mp4add=1900
 
-cd ../ && python3 PiMotion.py &
+cd ../ && python3 PiMotion.py 
 sleep 15
 
 while [ 1 ]; do
@@ -38,6 +38,6 @@ while [ 1 ]; do
  sleep 15
  echo "IPFS starting"
  echo $PWD
- cd ../ && python3 ipfs_http_client.py &
+ cd ../ && python3 ipfs_http_client.py
  cd data/
 done
